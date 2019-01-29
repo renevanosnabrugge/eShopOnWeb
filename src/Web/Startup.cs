@@ -42,10 +42,10 @@ namespace Microsoft.eShopWeb.Web
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             // use in-memory database
-            ConfigureInMemoryDatabases(services);
+            //ConfigureInMemoryDatabases(services);
 
             // use real database
-            // ConfigureProductionServices(services);
+             ConfigureProductionServices(services);
         }
 
         private void ConfigureInMemoryDatabases(IServiceCollection services)
@@ -69,14 +69,13 @@ namespace Microsoft.eShopWeb.Web
             services.AddDbContext<CatalogContext>(c =>
                 c.UseSqlServer(Configuration.GetConnectionString("CatalogConnection")));
 
+
             // Add Identity DbContext
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
             ConfigureServices(services);
         }
-
-
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -133,6 +132,7 @@ namespace Microsoft.eShopWeb.Web
                 .AddCheck<ApiHealthCheck>("api_health_check");
 
             _services = services; // used to debug registered services
+            
         }
 
         private static void CreateIdentityIfNotCreated(IServiceCollection services)
@@ -148,6 +148,7 @@ namespace Microsoft.eShopWeb.Web
                         .AddDefaultUI(UIFramework.Bootstrap4)
                         .AddEntityFrameworkStores<AppIdentityDbContext>()
                                         .AddDefaultTokenProviders();
+
                 }
             }
         }
@@ -231,6 +232,8 @@ namespace Microsoft.eShopWeb.Web
                     name: "default",
                     template: "{controller:slugify=Home}/{action:slugify=Index}/{id?}");
             });
+
+            
         }
 
         private void ListAllRegisteredServices(IApplicationBuilder app, LinkGenerator linkGenerator)

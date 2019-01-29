@@ -1,0 +1,1 @@
+az sql server firewall-rule create --server __db-servername__ --resource-group __rg-name__ --name Client --start-ip-address 104.40.130.216 --end-ip-address 104.40.130.216
