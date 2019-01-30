@@ -28,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "src\Web\Web.csproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployment", "deployment", "{1759D108-2EE4-4FA4-A7E9-2429021D769E}"
 	ProjectSection(SolutionItems) = preProject
-		src\Deployment\deploy.ps1 = src\Deployment\deploy.ps1
+		src\Deployment\deploy.cmd = src\Deployment\deploy.cmd
 		src\Deployment\firewall.ps1 = src\Deployment\firewall.ps1
 	EndProjectSection
 EndProject
