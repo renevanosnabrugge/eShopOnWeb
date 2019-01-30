@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "value": "__app-name__-plan"
+    },
+    "webSiteName": {
+      "value": "__app-name__"
+    },
+    "appInsightsName": {
+      "value": "__app-name__-ai"
+    },
+    "skuName": {
+      "value": "__app-sku__"
+  }
+}
+}
